@@ -1,54 +1,34 @@
 package dangokc.com;
 
-public class Swimmer implements RaceParticipant {
-    private int _racerId;
-    private String _name;
-    private int _age;
+public class Swimmer extends Athlete {
+    
+    private boolean _asian;
     
     public Swimmer() {
         //do nothing;
     }
 
-    public Swimmer(int racerId, String name, int age) {
-        this._racerId = racerId;
-        this._name = name;
-        this._age = age;
-    }
-    
-    public void setRacerId(int racerId){
-        _racerId = racerId;
-    }
-    
-    public int getRacerId() {
-        return _racerId;        
+    public Swimmer(int racerId, String name, int age, boolean asian) {
+        super(racerId, name, age);
+        _asian = asian;
     }
 
-    public String getName() {
-        return _name;
+    public boolean isAsian() {
+        return _asian;
     }
 
-    public void setName(String name) {
-        this._name = name;
+    public void setAsian(boolean _asian) {
+        this._asian = _asian;
     }
-
-    public int getAge() {
-        return _age;
-    }
-
-    public void setAge(int age) {
-        this._age = age;
-    }
-    
+       
     public String performRaceActivity() {
         return "Swimming...";
     }
     
     public String toString() {
-        return String.format("%s\tRacerID: %d - %s - %d - Activity: %s\n"
-                                , getClass()
-                                , getRacerId()
-                                , getName()
-                                , getAge()
+        return String.format("%s Is Asian: %b - Activity: %s\n"
+                                , super.toString()
+                                , isAsian()
                                 , performRaceActivity()
                             );
     }
