@@ -32,6 +32,6 @@ public class RunnerTest {
                         , racerId
                         , r2.getRacerId()
                     );
-    }
-    
+    }    
+       
 }
