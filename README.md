@@ -1,6 +1,7 @@
-So far:
-1) Created three classes Runner, Swimmer and Biker
-2) Created two interfaces RaceParticipant and People
-3) All classes implement Both interfaces
+New Structure
 
-Notes: . lots of common codes
+. Interfaces unchanged
+. Create abstract class "Athlete"
+. Move the common properties
+. Keep the unique properties in the classes
+. Test the abstract system

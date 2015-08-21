@@ -11,6 +11,7 @@ public class RunnerTest {
     private String raceActivity = "Running";
     private String name = "Huy";
     private int age = 32;
+    private String brand = "Adidas";
     
     public RunnerTest() {
     }
@@ -28,7 +29,7 @@ public class RunnerTest {
     @Test
     public void testRunnerConstructor() {
         assertNotNull("Default runner could not be created", r);
-        Runner r2 = new Runner(racerId, name, age);
+        Runner r2 = new Runner(racerId, name, age, brand);
         assertNotNull("Explicit Runner could not be created", r2);
         assertEquals("RacerID not set correctly on r2"
                         , racerId
@@ -41,6 +42,10 @@ public class RunnerTest {
         assertEquals("Age not set correctly on r2"
                         , age
                         , r2.getAge()
+                    );
+        assertEquals("Shoe Brand not set correctly on r2"
+                        , brand
+                        , r2.getShoeBrand()
                     );
     }    
        

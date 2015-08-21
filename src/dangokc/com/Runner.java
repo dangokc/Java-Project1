@@ -1,60 +1,35 @@
 
 package dangokc.com;
 
-public class Runner implements RaceParticipant, Person {
+public class Runner extends Athlete {
     
-    private int _racerId;
-    private String _name;
-    private int _age;
+    private String _shoeBrand;
     
     public Runner() {
         //do nothing;
     }
 
-    public Runner(int racerId, String name, int age) {
-        this._racerId = racerId;
-        this._name = name;
-        this._age = age;
-    }
-    
-    //From RaceParticipant interface
-    public void setRacerId(int racerId){
-        _racerId = racerId;
-    }
-    
-    public int getRacerId() {
-        return _racerId;        
-    }
-    
-    //From Person interface
-    public String getName() {
-        return _name;
+    public Runner(int racerId, String name, int age, String brand) {
+        super(racerId, name, age);
+        _shoeBrand = brand;
     }
 
-    public void setName(String name) {
-        this._name = name;
+    public String getShoeBrand() {
+        return _shoeBrand;
     }
 
-    public int getAge() {
-        return _age;
+    public void setShoeBrand(String brand) {
+        this._shoeBrand = brand;
     }
-
-    public void setAge(int age) {
-        this._age = age;
-    }
-    
-    
     
     public String performRaceActivity() {
         return "Running...";
     }
     
     public String toString() {
-        return String.format("%s\tRacerID: %d - %s - %d - Activity: %s\n"
-                                , getClass()
-                                , getRacerId()
-                                , getName()
-                                , getAge()
+        return String.format("%s Shoe brand: %s - Activity: %s\n"
+                                , super.toString()
+                                , getShoeBrand()
                                 , performRaceActivity()
                             );
     }
