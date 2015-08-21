@@ -9,6 +9,8 @@ public class RunnerTest {
     private Runner r;
     private int racerId = 123456;
     private String raceActivity = "Running";
+    private String name = "Huy";
+    private int age = 32;
     
     public RunnerTest() {
     }
@@ -26,11 +28,19 @@ public class RunnerTest {
     @Test
     public void testRunnerConstructor() {
         assertNotNull("Default runner could not be created", r);
-        Runner r2 = new Runner(racerId);
+        Runner r2 = new Runner(racerId, name, age);
         assertNotNull("Explicit Runner could not be created", r2);
         assertEquals("RacerID not set correctly on r2"
                         , racerId
                         , r2.getRacerId()
+                    );
+        assertEquals("Name not set correctly on r2"
+                        , name
+                        , r2.getName()
+                    );
+        assertEquals("Age not set correctly on r2"
+                        , age
+                        , r2.getAge()
                     );
     }    
        
